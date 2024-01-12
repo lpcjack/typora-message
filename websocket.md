@@ -311,9 +311,9 @@ public static synchronized void subOnlineCount() {
       
    /**
       
-  
+    
     * WebSocketController
-  
+    
   * @author zhengkai.blog.csdn.net
     */
     @RestController
@@ -419,4 +419,5 @@ public static synchronized void subOnlineCount() {
  <p>【操作】：<div><a onclick="sendMessage()">发送消息</a></div>
  </body>
  </html>
+---
 
