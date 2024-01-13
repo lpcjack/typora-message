@@ -32,6 +32,10 @@
 3. `git commit -m “这是第n次提交”` 将文件提交至git本地仓库。
 4. `git push origin main` 将文件上传至GitHub远程仓库。
 
+注意：
+
+​	若出现`fatal: unable to access 'https://github.com/lpcjack/typora-message.git/': Failed to connect to github.com port 443 after 21280 ms: Couldn't connect to server`报错，说明本机系统代理端口和git端口不一致。解决方案参考以下网址：[解决方案](http://t.csdnimg.cn/vHNyV)
+
 ---
 
 # 三，删除GitHub仓库上的文件
