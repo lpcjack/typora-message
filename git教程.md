@@ -44,3 +44,13 @@
 2. `git rm 文件名.后缀` 将文件从本地仓库和工作目录中删除。
 3. `git commit -m` “这是删除的文件” 提交删除操作。
 4. `git push origin main` 推送删除操作到远程仓库。
+
+---
+
+# 四，删除GitHub仓库上的文件，更新到本地git仓库。
+
+1. `git pull origin main` 拉取远程变更，更新本地分支。
+
+2. `git status`查看状态，若出现`On branch main nothing to commit, working tree clean`，说明成功。
+
+   
