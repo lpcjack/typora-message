@@ -2,7 +2,7 @@
 
 ---
 
-![前端总体结构](../typora pictures/前端代码结构.png)
+![前端总体结构](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401131431601.png)
 
 ---
 
@@ -337,11 +337,11 @@ export const useUser = defineStore("user", {
 
 ### （1），login登陆界面
 
-![image-20240112110335220](C:/Users/vbfgd/AppData/Roaming/Typora/typora-user-images/image-20240112110335220.png)
+![image-20240112110335220](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401131432465.png)
 
 ### （2），home主界面
 
-![image-20240112110458539](C:/Users/vbfgd/AppData/Roaming/Typora/typora-user-images/image-20240112110458539.png)
+![image-20240112110458539](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401131432470.png)
 
 ### （3），App.vue
 
