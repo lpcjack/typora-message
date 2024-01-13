@@ -32,3 +32,11 @@
 3. `git commit -m “这是第n次提交”` 将文件提交至git本地仓库。
 4. `git push origin main` 将文件上传至GitHub远程仓库。
 
+---
+
+# 三，删除GitHub仓库上的文件
+
+1. 首先`git status` 查看状态，解决冲突。
+2. `git rm 文件名.后缀` 将文件从本地仓库和工作目录中删除。
+3. `git commit -m` “这是删除的文件” 提交删除操作。
+4. `git push origin main` 推送删除操作到远程仓库。
