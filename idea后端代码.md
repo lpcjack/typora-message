@@ -2,7 +2,7 @@
 
 ---
 
-<img src="../图片/后端代码结构.PNG" alt="后端代码结构" />
+<img src="https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401131429316.PNG" alt="后端代码结构" />
 
 ---
 
