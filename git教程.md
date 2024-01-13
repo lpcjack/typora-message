@@ -23,12 +23,12 @@
 
 10. 然后上传至GitHub，输入`git push origin main`。
 
-    # 二，本地文件更新
+---
 
-    1. 添加文件夹下的文件到git的暂存区，输入`git add .`或者`git add 文件名`。
-    2. 加上标签，输入`git commit -m “这是第二次上传”`。
-    3. 然后上传至GitHub，输入`git push origin main`。
-    
-    ---
-    
-    
+# 二，本地已存在文件更新
+
+1. `git status`查看状态。
+2. `git add .`或者`git add 文件名` 添加至git缓冲区（暂存区）。
+3. `git commit -m “这是第n次提交”` 将文件提交至git本地仓库。
+4. `git push origin main` 将文件上传至GitHub远程仓库。
+
