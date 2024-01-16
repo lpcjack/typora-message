@@ -270,6 +270,41 @@ public class SpringBootThree {
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401152239361.png)
 
+---
+
+
+
+##### （Ⅳ），@RequestMapping的属性
+
+-  @RequestMapping的value属性
+
+- @RequestMapping 的 value 属性必须设值；
+
+- @RequestMapping 的 value 属性是通过当前请求的请求地址来匹配请求；
+
+- 从上面的源码中可以看到value属性是一个字符串类型的数组，因此说明可以将多个请求映射到一个方法上，只需要给 value 来指定一个包含多个路径的数组。
+
+- ```java
+  @Controller
+  public class RequestMappingController {
+  @RequestMapping(value = {"/testRequest","/test"})
+  public String testRequest(){
+      return "success";
+  }
+  
+  }
+  ```
+
+  在浏览器中输入下面路径进行测试：
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161027679.png)
+
+​	![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161027153.png)
+
+**注意：从上面两张图我们能够看到，这时的请求映射所映射的请求的请求路径为选择value数组中的任意一个都可以。**
+
+
+
 
 
 ---
