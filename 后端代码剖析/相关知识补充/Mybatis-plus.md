@@ -199,7 +199,7 @@ public class SpringBootThree {
 
 
 
-#### （2），@RequestMapping注解
+#### （2），@RequestMapping
 
 - @RequestMapping注解是一个**用来处理请求地址映射的注解**，可用于**映射一个请求或一个方法**，可以用在类或方法上。
 
@@ -274,7 +274,7 @@ public class SpringBootThree {
 
 
 
-##### （Ⅳ），@RequestMapping的属性
+##### （Ⅳ），value属性
 
 -  @RequestMapping的value属性
 
@@ -303,11 +303,137 @@ public class SpringBootThree {
 
 **注意：从上面两张图我们能够看到，这时的请求映射所映射的请求的请求路径为选择value数组中的任意一个都可以。**
 
+---
 
+##### （Ⅴ），method属性
+
+- @RequestMapping的method属性是通过**当前请求的请求方式来匹配请求**；
+- 浏览器向服务器发送请求，请求方式有很多**GET、HEAD、POST、PUT、PATCH、DELETE、OPTIONS、TRACE**。可以使用 method 属性来约束请求方式。
+- 设置请求方式为get：
+
+```java
+@Controller
+public class RequestMappingController {
+
+    @RequestMapping(value = "/testRequest",method = RequestMethod.GET)
+    public String testRequest(){
+        return "success";
+    }
+
+}
+```
+
+- 以post方式请求：
+
+```css
+<form th:action="@{/testRequest}" method="post">
+    <input type="submit">
+</form>
+```
+
+- 请求结果：
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161046873.png)
+
+​	注意：我们在@RequestMapping注解里加一个方法限定：**method = RequestMethod.GET，则请求必须是get的**，否则就会发生以上的错误。
+
+​	映射方法中明确要求请求方式为get，所以post方式不被允许，只有修改为get，才能够请求成功，如果要想两种方式都支持，只需在@RequestMapping	注解的method属性中添加另一种方式即可，中间用英文逗号隔开。
+
+- **扩展：**
+
+  ```
+  @GetMapping：处理get方式请求的映射
+  
+  @PostMapping：处理post方式请求的映射
+  
+  @PutMapping：处理put方式请求的映射
+  
+  @DeleteMapping：处理delete方式请求的映射
+  
+  @GetMapping就相当于@RequestMapping(method=RequestMethod.GET),它会将get映射到特定的方法上。
+  ```
+
+  使用方式：`@GetMapping(value = "/testRequest")`
 
 
 
 ---
+
+
+
+##### （Ⅵ），params属性
+
+- @RequestMapping的params属性是通过当前请求的请求参数来匹配请求；
+
+- @RequestMapping的params属性是一个字符串类型的数组，可以通过下面四种表达是来设置匹配关系
+
+```
+“param”：要求请求映射的请求必须为包含 param的请求参数
+“!param”：要求请求映射的请求是不能包含param的请求参数
+“param=value”：要求请求映射的请求必须包含 param 的请求参数，且 param 参数的值必须为 value
+“param!=value”： 要求请求映射的请求是必须包含 param 的请求参数，其值不能为 value
+```
+
+- 设置params的属性值为username：
+
+  ```java
+  @RequestMapping(value = "/test",params = "username")
+      public String test(){
+          return "success";
+      }
+  ```
+
+- 请求结果：
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161106952.png)
+
+- 注意：我们设置了params属性，就意味着**该请求映射的请求必须包含username才能够请求成功。**
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161108674.png)
+
+- **当给params属性设置多个属性值时，必须同时满足才能够请求成功，否则会出现下面的错误：**
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161109143.png)
+
+---
+
+##### （Ⅶ），headers属性
+
+- @RequestMapping的headers属性是通过当前请求的请求头信息来匹配请求；
+
+- @RequestMapping的headers属性是一个字符串类型的数组，可以通过下面四种表达是来设置匹配关系
+
+```
+“header”：要求请求映射的请求必须为包含 header的请求头信息
+“!header”：要求请求映射的请求必须为不包含 header的请求头信息
+“header=value”：要求请求映射的请求必须为包含 header的请求头信息，并且header的值必须为value
+“header!=value”：要求请求映射的请求必须为包含 header的请求头信息，并且header的值必须不是value
+```
+
+- 设置请求头信息：
+
+  ```java
+   @RequestMapping(value = "/test",headers = "Host = localhost:8081")
+      public String test(){
+          return "success";
+      }
+  ```
+
+- 请求结果：
+
+  ![在这里插入图片描述](https://raw.githubusercontent.com/lpcjack/typora-message/main/assets/202401161113574.png)
+
+- **注意：如果当前请求不满足headers属性，此时页面就会显示404错误，即资源未找到。**
+
+
+
+---
+
+
+
+---
+
+
 
 ## 6，Service层
 
